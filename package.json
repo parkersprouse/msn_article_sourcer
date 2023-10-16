@@ -1,0 +1,40 @@
+{
+  "author": "Parker Sprouse <parker@parkersprouse.me> (https://parkersprouse.me)",
+  "browserslist": "defaults",
+  "description": "",
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "msn_sourcer",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": "^18",
+    "pnpm": "^8"
+  },
+  "scripts": {
+    "lint:css": "stylelint src/**/*.css",
+    "lint:css:fix": "stylelint --fix src/**/*.css",
+    "lint:js": "xo src/**/*.js",
+    "lint:js:fix": "xo --fix src/**/*.js",
+    "lint": "pnpm run lint:css && pnpm run lint:js",
+    "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
+    "build": "node build.js",
+    "package": "pnpm run build && web-ext build -s dist -o && mv web-ext-artifacts/*.zip build/scratch.xpi"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "esbuild": "^0.19.4",
+    "eslint-plugin-github": "^4.10.1",
+    "eslint-plugin-sonarjs": "^0.21.0",
+    "postcss": "^8.4.31",
+    "postcss-preset-env": "^9.2.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-clean-order": "^5.2.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-use-nesting": "^4.1.0",
+    "web-ext": "^7.8.0",
+    "xo": "^0.56.0"
+  }
+}
