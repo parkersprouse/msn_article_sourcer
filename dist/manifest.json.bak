@@ -1,17 +1,12 @@
 {
   "description": "",
-  "homepage_url": "https://github.com/parkersprouse",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "MSN Article Sourcer",
   "version": "1.0.0",
+  "homepage_url": "https://github.com/parkersprouse",
   "icons": {
     "48": "img/logo.svg",
     "96": "img/logo.svg"
-  },
-  "background": {
-    "scripts": [
-      "background.js"
-    ]
   },
   "content_scripts": [
     {
@@ -19,12 +14,16 @@
       "js": ["popup.js"]
     }
   ],
-  "browser_action": {
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "action": {
     "default_icon": "img/logo.svg",
     "default_popup": "popup.html",
     "default_title": "MSN Article Sourcer"
   },
-  "permissions": ["activeTab", "tabs", "webNavigation", "webRequest", "webRequestFilterResponse"],
   "browser_specific_settings": {
     "gecko": {
       "id": "parker@parkersprouse.me",

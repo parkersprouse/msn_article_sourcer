@@ -20,17 +20,17 @@
     "lint": "pnpm run lint:css && pnpm run lint:js",
     "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
     "build": "node build.js",
-    "package": "pnpm run build && web-ext build -s dist -o && mv web-ext-artifacts/*.zip build/scratch.xpi"
+    "package": "pnpm run build && web-ext build -s dist -o && mkdir build && mv web-ext-artifacts/*.zip build/mas.xpi"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.1",
-    "esbuild": "^0.19.4",
+    "esbuild": "^0.19.5",
     "eslint-plugin-github": "^4.10.1",
     "eslint-plugin-sonarjs": "^0.21.0",
     "postcss": "^8.4.31",
     "postcss-preset-env": "^9.2.0",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-clean-order": "^5.2.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-use-nesting": "^4.1.0",

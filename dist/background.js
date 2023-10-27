@@ -1,0 +1,1 @@
+function o(e){e.frameId===0&&browser.tabs.sendMessage(e.tabId,"sourceit").catch(r=>{console.error("Error sending message:"),console.error(r)})}browser.webNavigation.onCompleted.addListener(o,{url:[{hostContains:".msn."}]});
