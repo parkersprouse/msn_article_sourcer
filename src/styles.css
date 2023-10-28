@@ -1,0 +1,23 @@
+html, body {
+  background: rgb(22, 28, 38);
+  color: #e5e9f0;
+  margin: 0;
+}
+
+body {
+  max-width: 500px;
+  padding: 1rem;
+}
+
+main .notice-title {
+  margin-bottom: 0.75rem;
+}
+
+main .orig-source-link {
+  color: #ebcb8b;
+  text-decoration: none;
+}
+
+main .orig-source-link:hover {
+  text-decoration: underline;
+}

@@ -73,6 +73,7 @@ await build({
   entryNames: '[dir]/[name]',
   entryPoints: [
     join(__source_dir, 'background.js'),
+    join(__source_dir, 'notification.js'),
     join(__source_dir, 'popup.js'),
   ],
   format: 'esm',

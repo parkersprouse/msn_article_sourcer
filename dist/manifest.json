@@ -16,12 +16,11 @@
   "content_scripts": [
     {
       "matches": ["*://*.msn.com/*"],
-      "js": ["popup.js"]
+      "js": ["notification.js"]
     }
   ],
   "browser_action": {
     "default_icon": "img/logo.svg",
-    "default_popup": "popup.html",
     "default_title": "MSN Article Sourcer"
   },
   "permissions": ["activeTab", "tabs", "webNavigation", "webRequest", "webRequestFilterResponse"],
