@@ -1,12 +1,12 @@
-function u(e){return new Promise(o=>{if(document.querySelector(e))o(document.querySelector(e));else{let t=new MutationObserver(n=>{document.querySelector(e)&&(t.disconnect(),o(document.querySelector(e)))});t.observe(document.body,{childList:!0,subtree:!0})}})}(()=>{try{browser.runtime.onMessage.addListener(e=>{if(e==="sourceit"){if(document.querySelector(".msn-sourcer-notice"))return;u('link[rel="canonical"]').then(o=>{if(!o)return;let t=o.getAttribute("href");if(!t)return;let n=document.createElement("style"),d=`
+function u(e){return new Promise(n=>{if(document.querySelector(e))n(document.querySelector(e));else{let t=new MutationObserver(o=>{document.querySelector(e)&&(t.disconnect(),n(document.querySelector(e)))});t.observe(document.body,{childList:!0,subtree:!0})}})}(()=>{try{browser.runtime.onMessage.addListener(e=>{if(e==="sourceit"){if(document.querySelector(".msn-sourcer-notice"))return;u('link[rel="canonical"]').then(n=>{if(!n)return;let t=n.getAttribute("href");if(!t)return;let o=document.createElement("style");o.id="msn-sourcer-styles";let d=`
               div.msn-sourcer-notice {
-                background: #3c414d;
+                background: #2b2b34;
                 border-radius: 4px;
-                border: 1px solid #090d13;
+                box-shadow: 0px 0px 8px black;
                 top: 15px;
                 color: #e5e9f0;
                 height: auto;
-                padding: 8px;
+                padding: 0.75rem;
                 position: fixed;
                 right: 15px;
                 width: 400px;
@@ -14,6 +14,10 @@ function u(e){return new Promise(o=>{if(document.querySelector(e))o(document.que
               }
 
               div.msn-sourcer-notice .notice-title {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 8px;
                 margin-bottom: 0.75rem;
               }
 
@@ -42,7 +46,11 @@ function u(e){return new Promise(o=>{if(document.querySelector(e))o(document.que
               div.msn-sourcer-notice .close-btn:hover {
                 color: #bf616a;
               }
-            `;n.styleSheet?n.styleSheet.cssText=d:n.append(document.createTextNode(d)),document.querySelector("head").append(n);let r=document.createElement("div");r.classList.add("msn-sourcer-notice");let c=document.createElement("button");c.classList.add("close-btn"),c.addEventListener("click",()=>{document.querySelector(".msn-sourcer-notice").remove()}),c.innerHTML=`
+            `;o.styleSheet?o.styleSheet.cssText=d:o.append(document.createTextNode(d)),document.querySelector("head").append(o);let r=document.createElement("div");r.classList.add("msn-sourcer-notice");let c=document.createElement("button");c.classList.add("close-btn"),c.addEventListener("click",()=>{document.querySelector(".msn-sourcer-notice").remove(),document.querySelector("#msn-sourcer-styles").remove()}),c.innerHTML=`
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path d="M5.72 5.72a.75.75 0 0 1 1.06 0L12 10.94l5.22-5.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L13.06 12l5.22 5.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L12 13.06l-5.22 5.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L10.94 12 5.72 6.78a.75.75 0 0 1 0-1.06Z"></path>
-              </svg>`;let s=document.createElement("div");s.classList.add("notice-title"),s.textContent="Original Article:";let i=document.createElement("a");i.classList.add("orig-source-link"),i.textContent=t,i.setAttribute("href",t),r.append(s),r.append(i),r.append(c),document.body.append(r)})}})}catch{}})();
+              </svg>`;let i=document.createElement("div");i.classList.add("notice-title"),i.innerHTML=`
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path>
+              </svg>
+              <span>Original Article:</span>`;let s=document.createElement("a");s.classList.add("orig-source-link"),s.textContent=t,s.setAttribute("href",t),r.append(i),r.append(s),r.append(c),document.body.append(r)})}})}catch{}})();

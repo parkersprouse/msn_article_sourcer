@@ -13,15 +13,16 @@ import { waitForElm } from './util.js';
             if (!source) return;
 
             const new_styles = document.createElement('style');
+            new_styles.id = 'msn-sourcer-styles';
             const css = `
               div.msn-sourcer-notice {
-                background: #3c414d;
+                background: #2b2b34;
                 border-radius: 4px;
-                border: 1px solid #090d13;
+                box-shadow: 0px 0px 8px black;
                 top: 15px;
                 color: #e5e9f0;
                 height: auto;
-                padding: 8px;
+                padding: 0.75rem;
                 position: fixed;
                 right: 15px;
                 width: 400px;
@@ -29,6 +30,10 @@ import { waitForElm } from './util.js';
               }
 
               div.msn-sourcer-notice .notice-title {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 8px;
                 margin-bottom: 0.75rem;
               }
 
@@ -73,6 +78,7 @@ import { waitForElm } from './util.js';
             close_btn.classList.add('close-btn');
             close_btn.addEventListener('click', () => {
               document.querySelector('.msn-sourcer-notice').remove();
+              document.querySelector('#msn-sourcer-styles').remove();
             });
             close_btn.innerHTML = `
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -81,7 +87,11 @@ import { waitForElm } from './util.js';
 
             const details = document.createElement('div');
             details.classList.add('notice-title');
-            details.textContent = 'Original Article:';
+            details.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path>
+              </svg>
+              <span>Original Article:</span>`;
 
             const source_link = document.createElement('a');
             source_link.classList.add('orig-source-link');
@@ -97,7 +107,3 @@ import { waitForElm } from './util.js';
     });
   } catch {}
 })();
-
-// (() => {
-
-// })();

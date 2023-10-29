@@ -1,10 +1,9 @@
 {
   "author": "Parker Sprouse <parker@parkersprouse.me> (https://parkersprouse.me)",
   "browserslist": "defaults",
-  "description": "",
+  "description": "Firefox extension for extracting the original source of an article re-posted on MSN",
   "license": "GPL-3.0",
-  "main": "index.js",
-  "name": "msn_sourcer",
+  "name": "msn_article_sourcer",
   "private": true,
   "type": "module",
   "version": "1.0.0",
@@ -20,7 +19,7 @@
     "lint": "pnpm run lint:css && pnpm run lint:js",
     "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
     "build": "node build.js",
-    "package": "pnpm run build && web-ext build -s dist -o && mkdir build && mv web-ext-artifacts/*.zip build/mas.xpi"
+    "package": "pnpm run build && web-ext build -s dist -o && mkdir build && mv web-ext-artifacts/*.zip build/msn_article_sourcer.xpi"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

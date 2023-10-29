@@ -28,8 +28,10 @@ browser.tabs.onActivated.addListener(async ({ tabId }) => {
     const tab = await browser.tabs.get(tabId);
     const match = tab.url.match(/^(http|https):\/\/\w*\.*msn\.com/g);
     if (match) {
+      await browser.browserAction.setIcon({ path: 'img/logo.svg' });
       browser.browserAction.enable();
     } else {
+      await browser.browserAction.setIcon({ path: 'img/logo_disabled.svg' });
       browser.browserAction.disable();
     }
   } catch {}

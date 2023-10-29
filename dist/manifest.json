@@ -1,6 +1,6 @@
 {
-  "description": "",
-  "homepage_url": "https://github.com/parkersprouse",
+  "description": "Firefox extension for extracting the original source of an article re-posted on MSN",
+  "homepage_url": "https://github.com/parkersprouse/msn_article_sourcer",
   "manifest_version": 2,
   "name": "MSN Article Sourcer",
   "version": "1.0.0",
@@ -23,7 +23,7 @@
     "default_icon": "img/logo.svg",
     "default_title": "MSN Article Sourcer"
   },
-  "permissions": ["activeTab", "tabs", "webNavigation", "webRequest", "webRequestFilterResponse"],
+  "permissions": ["tabs", "webNavigation"],
   "browser_specific_settings": {
     "gecko": {
       "id": "parker@parkersprouse.me",
