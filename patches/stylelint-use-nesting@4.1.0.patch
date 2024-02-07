@@ -1,0 +1,30 @@
+diff --git a/index.cjs b/index.cjs
+deleted file mode 100644
+index 29707cb214cb1a3f377eecdfea0617f1905e051d..0000000000000000000000000000000000000000
+diff --git a/index.cjs.map b/index.cjs.map
+deleted file mode 100644
+index 2b03f9d2ea4e28b6d638a06a007619c1b102791f..0000000000000000000000000000000000000000
+diff --git a/package.json b/package.json
+index 17fb5a395b4618b39979004de359b418226bdb4f..f90e726fb9efd9927fbb93b9134074cc6bdf3e94 100644
+--- a/package.json
++++ b/package.json
+@@ -7,17 +7,15 @@
+   "repository": "csstools/stylelint-use-nesting",
+   "homepage": "https://github.com/csstools/stylelint-use-nesting#readme",
+   "bugs": "https://github.com/csstools/stylelint-use-nesting/issues",
+-  "main": "index.cjs",
++  "main": "index.mjs",
+   "module": "index.mjs",
+   "exports": {
+     ".": {
+       "import": "./index.mjs",
+-      "node": "./index.cjs"
++      "node": "./index.mjs"
+     }
+   },
+   "files": [
+-    "index.cjs",
+-    "index.cjs.map",
+     "index.mjs",
+     "index.mjs.map"
+   ],

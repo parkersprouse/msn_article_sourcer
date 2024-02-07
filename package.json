@@ -15,26 +15,33 @@
     "lint:ext": "cd dist && web-ext lint",
     "lint:css": "stylelint src/**/*.css",
     "lint:css:fix": "stylelint --fix src/**/*.css",
-    "lint:js": "xo src/**/*.js",
-    "lint:js:fix": "xo --fix src/**/*.js",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
     "lint": "pnpm run lint:css && pnpm run lint:js",
     "lint:fix": "pnpm run lint:css:fix && pnpm run lint:js:fix",
     "build": "node build.js",
     "package": "pnpm run build && web-ext build -s dist -o && mkdir build && mv web-ext-artifacts/*.zip build/msn_article_sourcer.xpi"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.1",
-    "esbuild": "^0.19.5",
+    "@eslint/eslintrc": "^3.0.0",
+    "@stylistic/eslint-plugin": "^1.6.0",
+    "@stylistic/stylelint-plugin": "^2.0.0",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-github": "^4.10.1",
-    "eslint-plugin-sonarjs": "^0.21.0",
-    "postcss": "^8.4.31",
-    "postcss-preset-env": "^9.2.0",
-    "stylelint": "^15.11.0",
-    "stylelint-config-clean-order": "^5.2.0",
-    "stylelint-config-standard": "^34.0.0",
+    "postcss": "^8.4.34",
+    "postcss-preset-env": "^9.3.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-clean-order": "^5.4.1",
+    "stylelint-config-standard": "^36.0.0",
     "stylelint-use-nesting": "^4.1.0",
-    "web-ext": "^7.8.0",
-    "xo": "^0.56.0"
+    "web-ext": "^7.11.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "stylelint-use-nesting@4.1.0": "patches/stylelint-use-nesting@4.1.0.patch"
+    }
   }
 }

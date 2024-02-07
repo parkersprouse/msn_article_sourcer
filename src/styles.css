@@ -1,7 +1,7 @@
 html, body {
-  background: rgb(22, 28, 38);
-  color: rgb(124, 124, 124);
   margin: 0;
+  color: rgb(124 124 124);
+  background: rgb(22 28 38);
 }
 
 body {
@@ -16,8 +16,8 @@ main .notice-title {
 main .orig-source-link {
   color: #ebcb8b;
   text-decoration: none;
-}
 
-main .orig-source-link:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

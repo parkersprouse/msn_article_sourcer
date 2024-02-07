@@ -1,20 +1,23 @@
 export default {
   extends: [
-    'stylelint-config-standard-scss',
+    'stylelint-config-standard',
     'stylelint-config-clean-order',
   ],
   plugins: [
     'stylelint-use-nesting',
+    '@stylistic/stylelint-plugin',
   ],
   rules: {
-    'csstools/use-nesting': true,
+    '@stylistic/declaration-block-trailing-semicolon': 'always',
+    '@stylistic/indentation': 2,
+    '@stylistic/unit-case': 'lower',
+    'csstools/use-nesting': 'always',
     'declaration-block-no-duplicate-properties': [
       true,
       {
         ignore: ['consecutive-duplicates-with-different-values'],
       },
     ],
-    'declaration-block-trailing-semicolon': 'always',
     'declaration-property-value-no-unknown': true,
     'selector-class-pattern': null,
     'selector-id-pattern': null,
