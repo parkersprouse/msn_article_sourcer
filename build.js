@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import { dirname, extname, join, resolve } from 'node:path';
-import { readdir, readFile, rm } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { build } from 'esbuild';
 import autoprefixer from 'autoprefixer';
+import { build } from 'esbuild';
 import cssnano from 'cssnano';
+import { fileURLToPath } from 'node:url';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
+import { dirname, extname, join, resolve } from 'node:path';
+import { readdir, readFile, rm } from 'node:fs/promises';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const __root_dir = resolve(__dirname);
@@ -37,8 +37,14 @@ for (const file of old_files) {
   await rm(file_path, { force: true });
 }
 // ---
-await rm(join(__root_dir, 'build'), { force: true, recursive: true });
-await rm(join(__root_dir, 'web-ext-artifacts'), { force: true, recursive: true });
+await rm(join(__root_dir, 'build'), {
+  force: true,
+  recursive: true,
+});
+await rm(join(__root_dir, 'web-ext-artifacts'), {
+  force: true,
+  recursive: true,
+});
 
 /**
  * [Step 2] PostCSS

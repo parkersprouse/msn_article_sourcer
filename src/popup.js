@@ -1,14 +1,3 @@
-// "default_popup": "popup.html",
-
-// import { waitForElm } from './util.js';
-
-// waitForElm('link[rel="canonical"]')
-//   .then((canonical) => {
-//     if (!canonical) return;
-//     const source = canonical.getAttribute('href');
-//     if (!source) return;
-//   });
-
 (() => {
   try {
     console.log('within popup; onload');
@@ -16,5 +5,5 @@
       console.log('within popup; onmessage');
       console.log(message);
     });
-  } catch {}
+  } catch { /* Don't worry about any errors from here */ }
 })();

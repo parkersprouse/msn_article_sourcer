@@ -28,6 +28,9 @@ export default [
   {
     files: ['**/*.js'],
     languageOptions: {
+      globals: {
+        browser: 'readonly',
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -93,7 +96,9 @@ export default [
       'no-unused-vars': [
         'error',
         {
-          varsIgnorePattern: 'props|^_',
+          // Ignore variables that begin with an underscore
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
       'no-useless-computed-key': [
