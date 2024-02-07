@@ -3,7 +3,7 @@
   "homepage_url": "https://github.com/parkersprouse/msn_article_sourcer",
   "manifest_version": 2,
   "name": "MSN Article Sourcer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "icons": {
     "48": "img/logo.svg",
     "96": "img/logo.svg"

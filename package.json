@@ -6,7 +6,7 @@
   "name": "msn_article_sourcer",
   "private": true,
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": "^20",
     "pnpm": "^8"
