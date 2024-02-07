@@ -8,10 +8,11 @@
   "type": "module",
   "version": "1.0.0",
   "engines": {
-    "node": "^18",
+    "node": "^20",
     "pnpm": "^8"
   },
   "scripts": {
+    "lint:ext": "cd dist && web-ext lint",
     "lint:css": "stylelint src/**/*.css",
     "lint:css:fix": "stylelint --fix src/**/*.css",
     "lint:js": "xo src/**/*.js",
